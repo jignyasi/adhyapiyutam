@@ -1,0 +1,21 @@
+Day - 00:
+    Install git
+        git clone https://github.com/jignyasi/adhyapiyutam
+        git add .
+        git commit -m "your message"
+        git push
+        git pull
+Day - 01:
+    Install Sublimetext(3.X)
+        Configuring Sublimetext:
+            Install Package Control (https://packagecontrol.io/installation)
+            Packages that needs to be installed in SubT
+                Compare side-by-side
+                Python BreakPoints
+                SideBar
+                SublimeREPL***
+                JEDI***
+    Install Python 2.7.X
+        Set Path Variable
+        Install pip
+

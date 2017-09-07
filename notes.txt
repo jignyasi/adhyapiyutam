@@ -1,0 +1,28 @@
+Day - 01:
+    Why we need a text editor
+    Most used languges for ML: 
+        R
+        Python
+    Do we need to learn both: NO
+        1. To avoid confusion between languages
+        2. Python has great way to go in the future(Big data components)
+    R:
+        Advantages:
+            Superb lib support
+            Extremely easy code
+        Disadvantages:
+            Poor memory management
+            Very slow execution when compared to python
+            No proper roadmap for bigdata
+    Python:
+        Advantages:
+            Very fast
+            Good progress in big data stack
+            OOP concepts
+        Disadvantages:
+            Relatively small number of libs
+            Slightly difficult when compared to R
+    Why These 2 languages:
+        Vectorized coding principles
+        Data Plotting
+        Lib
