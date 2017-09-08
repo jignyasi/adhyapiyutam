@@ -5,6 +5,7 @@ Day - 00:
         git commit -m "your message"
         git push
         git pull
+        git status
 Day - 01:
     Install Sublimetext(3.X)
         Configuring Sublimetext:

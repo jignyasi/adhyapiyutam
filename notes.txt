@@ -26,3 +26,35 @@ Day - 01:
         Vectorized coding principles
         Data Plotting
         Lib
+
+Day - 02:
+    Basics
+        Print
+        Comment
+        Indentation
+    Operators and Expressions
+        Operators
+            +,-,/,//,%,**,pow
+            special care needs to taken for division
+        Expression
+            bool: True, False
+            and, or, not, ==, != 
+    Control flow
+        if-elif-else
+        while
+        for
+        break
+        continue
+        local/global
+    Functions
+        def f()
+        def f(x)
+        def f(x = 1)
+        def f(x, y, *numbers, **kwargs)
+    Modules
+    Data Structures
+    Problem Solving
+    Object Oriented Programming
+    Input and Output
+    Exceptions
+    Standard Library
