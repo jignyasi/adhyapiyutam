@@ -127,3 +127,62 @@ def myfun(x,y, *nums, **kwargs):
     return x+y+kwargs['z'] + sum(nums)
 
 print myfun(2,4,6,8,z = 100, h = 200)
+
+
+#sys.path.insert(fileWD)
+import sampleProg1
+sampleProg1.fnCopy('choc', 'biscuit')
+
+
+from sampleProg1 import fnCopy1, fnCopy2
+fnCopy1('choc', 'biscuit')
+
+from sampleProg1 import *
+fnCopy2('choc', 'biscuit')
+
+
+import sampleProg1
+dir(sampleProg1)
+
+from myPackage1 import sampleProg1
+sampleProg1.fnCopy1('source1', 'destination1')
+
+
+x = 2
+print type(x)
+x = 2.2
+print type(x)
+x = '2.2'
+print type(x)
+x = 'abcdefghijklmno'
+print type(x)
+print x[0:3]
+print x[:-1]
+print x[::-1]
+print x[::2]
+print dir(x)
+print len(x)
+print x.isupper()
+print x.upper()
+print x.replace('k','K')
+print x + '123'
+
+x = ['a',2, 'b',3 ,'c']
+print type(x)
+print len(x)
+print x[0:3]
+print x[-1]
+print x[:-1]
+print x[::2]
+print x + list('xyz')
+print x + ['1','2','22','33']
+print dir(x)
+x.sort() 
+print(x)
+x.append('yellow')
+print(x)
+x.append(['blue', 'red'])
+print(x)
+x.extend(['pink', 'green'])
+print(x)
+

@@ -52,9 +52,24 @@ Day - 02:
         def f(x = 1)
         def f(x, y, *numbers, **kwargs)
     Modules
+        sys.argv
+        imports
+        __name__ == '__main__'
+        our own modules
+        dir
+        packages **
     Data Structures
-    Problem Solving
+        string
+        list
+        tuple
+        sequencing
+        dict
+        references
     Object Oriented Programming
+        classes
+        self
+        init method
+        inheritance
     Input and Output
     Exceptions
     Standard Library
