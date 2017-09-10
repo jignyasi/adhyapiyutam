@@ -177,7 +177,7 @@ print x[::2]
 print x + list('xyz')
 print x + ['1','2','22','33']
 print dir(x)
-x.sort() 
+x.sort()
 print(x)
 x.append('yellow')
 print(x)
@@ -185,4 +185,133 @@ x.append(['blue', 'red'])
 print(x)
 x.extend(['pink', 'green'])
 print(x)
+x.insert(2, 'MENTAL')
+print x
+x.reverse()
+print x
+x.pop(3)
+print x
+x.remove('a')
+print x
+y = x.pop(1)
+print x,y
+print sum([0,1,2])
+print sum([True, False, True])
 
+
+x = ['a',2, 'b',3 ,'c']
+#M1
+y = []
+for k in x:
+    y.append(str(k)+'L')
+print y
+
+#M2
+y = [str(k)+'L' for k in x]
+
+#M3
+y = map(lambda k: str(k)+'L',x)
+
+#########
+filter(lambda k: k>5, range(10))
+reduce(lambda a,b: a+b, range(10))
+k = []
+reduce(lambda a,b: k.append([a,b]), [22,1,2,44,7,3,8])
+print k
+
+####Vectorized operations
+y = ['1','2','22','33']
+x = '_'.join(y)
+print x
+print x.split('_')
+
+y = ['1',2,'22',33,'abc']
+print '+'.join(map(str, y))
+
+print [2,3] #this is a list
+print (2,3) #this is a tuple
+k = [2,3]
+k.append(4)
+print k
+
+x = (2,3,4,5,6,7) #immutable
+print type(x)
+print len(x)
+print x[0:3]
+print dir(x)
+#print x.count(4)
+print x.index(4)
+x = [('username','password1'),('username1','password2')]
+print x
+print map(lambda k: 
+    '+'.join(k),
+    x)
+
+def myJoinfunc(l):
+    return '+'.join(l)
+
+print map(myJoinfunc, x)    
+
+print (('username','password1'),('username1','password2'))
+
+a,b = 2,3
+print a,b
+a,b,_ = 2,3,4
+print a,b
+a,b = ('AB','CD')
+print a,b
+
+x = [('username','password1'),('username1','password2')]
+
+def myJoinfunc(l):
+    a,b = l
+    return '+'+a+'::'+b
+print map(myJoinfunc, x)
+
+x = (('username','password1'),('username1','password2'))
+print map(myJoinfunc, x)
+print (2,3) # length 2
+print (2) #will not be a tuple
+print (2,) # length 1
+
+[]#Search is index based
+()#Search is index based
+{}#Search is key based
+x = {'username':'password','username1':'password1','username2':'password2'}
+print type(x)
+print len(x)
+print x['username1']
+print x.keys()
+print x.values()
+for k in x:
+    print [k,x[k]]
+print [[k,x[k]] for k in x]
+x['username3'] = 'password3' #adding a new user
+print x
+print dir(x)
+for usr,pasw in x.items():
+    print usr+pasw
+x.pop('username3')
+print x
+del x['username2']
+print x
+print x['username1']
+x['username1'] = 'MYPASSWORD'
+print x['username1']
+
+x = {'username':['password',22,'M','HYD'],
+'username1':'password1',
+'username2':('password2','M'),
+'username3': {'LOC':'HYD','Age':28,'PASSWORD':'abcxyz'}}
+print x
+print x['username']
+print x['username'][3]
+print x['username3']
+print x['username3']['LOC']
+
+a = 1
+b = a
+a = range(5)
+#b = a
+#a.append(33)
+print a,b
