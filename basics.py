@@ -198,6 +198,12 @@ print x,y
 print sum([0,1,2])
 print sum([True, False, True])
 
+x = ['a','a','b','b','b','c']
+y = ['b','c','c','c','d']
+print set(x) - set(y)
+print set(x).union(set(y))
+print set(x).intersection(set(y))
+print list(set(x).union(set(y)))
 
 x = ['a',2, 'b',3 ,'c']
 #M1
@@ -309,9 +315,24 @@ print x['username'][3]
 print x['username3']
 print x['username3']['LOC']
 
-a = 1
+a = list('abcde')
 b = a
-a = range(5)
-#b = a
-#a.append(33)
+a.remove('c')
 print a,b
+a = list('abcde')
+b = a[:] ##Copy
+a.remove('c')
+print a,b
+a = zip(list('abcde'),list('fghij'))
+a = dict(a)
+b = a
+a.pop('c')
+print a,b
+a = zip(list('abcde'),list('fghij'))
+a = dict(a)
+b = a.copy()
+a.pop('c')
+print a,b
+
+
+

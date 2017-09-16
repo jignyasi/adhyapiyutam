@@ -64,8 +64,10 @@ Day - 02:
         tuple
         sequencing
         dict
+        set
         references
     Object Oriented Programming
+        decorators
         classes
         self
         init method
