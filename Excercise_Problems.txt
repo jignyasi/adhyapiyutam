@@ -23,7 +23,30 @@ Declare a var called "my_name" and assign ur name
 Print 2 to 4 characters of ur name (for "vamsee"-expected:'ams')
 Print ur name in reverse
 Sort the characters in ur name and print it (expected:'aeemsv')
-Create a list of atleast 4 colors
+Create a list "my_colors" with atleast 4 colors
 Join all the colors into a string with "_" between them (exp: "col1_col2_col3_col4")
 Print in all upper case and all lower case of your my_name
-Declare a var called "my_name" and assign ur name
+Add a new color called "SPACE GRAY" to "my_colors"
+In the list "my_color" for each color print their third character (use for loop)
+In the list "my_color" for each color print their third character (use an inline for loop)
+In the list "my_color" for each color print their third character (use map)
+Create a list "my_num_list" and populate it with 10 random numbers between 1 to 100(look at from random import randint)
+From the list "my_num_list", show all the elements <= 50 (use for loop)
+From the list "my_num_list", show all the elements <= 50 (use an inline for loop)
+From the list "my_num_list", show all the elements <= 50 (use map)
+From the list "my_num_list", show all the elements <= 50 (use filter)
+Create a list of 5 numbers([l1,l2..]), another list of 5 cities([m1,m2..]), another list of 5 animals([n1,n2..])...now create a tuple such that we get [(l1,m1,n1),(l2,m2,n2)...]
+Create a dict "my_dict" of 5usernames with 5 passwords
+For each key in "my_dict" print the 3 character in the password (use for loop)
+For each key in "my_dict" print the 3 character in the password (use an inline for loop)
+For each key in "my_dict" print the 3 character in the password (use map)
+Delete a user from ur "my_dict"
+Insert a new user in ur "my_dict"
+Create a dict "my_dict2" where for the keys
+	'A' -- Value is "my_dict"
+	'B' -- Value is "my_num_list"
+	'C' -- 'my_color'
+Create a list of range of numbers from 0 to 500 and print every even value (exp: 0,2,4,6..)
+Create a list of range of numbers from 0 to 500 and print every odd value (exp: 1,3,5,7..)
+Create a list of range of numbers from 0 to 500 and print the second number from the end
+Create a list of range of numbers from 0 to 500 and print every third number (exp: 0,3,6,9..)
