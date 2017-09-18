@@ -1,0 +1,29 @@
+Excercise Problems
+
+##BASICS
+Print "hello world!"
+Declare vars "my_name" and "my_age"
+print a dynamic statement "my name is DASH and my age is DASH"
+Calculate the remainder when 27 is divided by 5
+Calculate the quotient when 27 is divided by 5
+How much is 27/5?
+How much 2 to the power of 10
+Declare a var called "my_number" and assign 43 to it
+how much is my_number/5? (I'm expecting 8.6)
+Declare a var called "my_bool" and assign FALSE to it
+Write all the basic truth table operations (there are 4 is suppose)
+Declare a var called "my_color" and assign a color of ur choice (between "RED" or "GREEN" or "BLUE")
+If "my_color" is "RED" then print "my color is red"...if "my_color" is "GREEN" then print "my color is green"...and so on
+
+
+##DATASTRUCTURES
+Print range of numbers until 50 (it should start from zero)
+Print range of numbers from 10 to 25 (it should start from 10)
+Declare a var called "my_name" and assign ur name
+Print 2 to 4 characters of ur name (for "vamsee"-expected:'ams')
+Print ur name in reverse
+Sort the characters in ur name and print it (expected:'aeemsv')
+Create a list of atleast 4 colors
+Join all the colors into a string with "_" between them (exp: "col1_col2_col3_col4")
+Print in all upper case and all lower case of your my_name
+Declare a var called "my_name" and assign ur name
