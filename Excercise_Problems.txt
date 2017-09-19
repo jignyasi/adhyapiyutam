@@ -50,3 +50,42 @@ Create a list of range of numbers from 0 to 500 and print every even value (exp:
 Create a list of range of numbers from 0 to 500 and print every odd value (exp: 1,3,5,7..)
 Create a list of range of numbers from 0 to 500 and print the second number from the end
 Create a list of range of numbers from 0 to 500 and print every third number (exp: 0,3,6,9..)
+There a list1 = ['a','a','a','b','b','b','b'], obtain unique vales in it (exp: ['a','b'])
+There a list1 = ['a','a','a','b','b','b','b','c','c'] & list2 = ['c','d']
+	obtain intersecting vals (exp: ['c'])
+	obtain union of list
+	obtain list1 - list2 unique vals (exp: ['a','b'])
+	obtain list1 - list2 all vals (exp: ['a','a','a','b','b','b','b'])
+Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use for)
+Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use while)
+Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use recursion)
+Write a function "fnAdd(x,y)" and return x+y
+Write a function "fnAdd" which can take multi-length input and return added vals(exp: fnAdd(2,3,4)=9 & fnAdd(1,2,3,4,5)=15)
+Write a function "fnStringManipulator(x)" which will take strings
+	if there's ' = ' symbol it will replace with " in "
+	if there's ' & ' symbol it will replace with " and "
+	if there's any text in parenthesis brackets...it will remove it
+	exp:
+		'test string' --> 'test string'
+		'age = 10 to 30' --> 'age in 10 to 30'
+		'age = 10 to 30 & g=nder = "M"' --> 'age in 10 to 30 and g=nder in "M"'
+		'age = 10 to 30 & (test1) & g=nder = "M" & (test2)' --> 'age in 10 to 30 and and g=nder in "M" and '
+Add a Decorator to fnStringManipulator and fnAdd to know the exec time and rerun a test case for each of these funcs
+Add one more Decorator to fnStringManipulator and fnAdd to achieve the following
+	if fnStringManipulator is called: output should be "fnStringManipulator returned{0}".format(output)
+	if fnAdd is called: output should be "fnAdd returned{0}".format(output)
+	DONT HARDCODE these texts into the decorator as I might want you to add this decorator to a new func "fnSub" and it should automatically print "fnSub returned..."
+Write a class "myParentClass" and 
+	initialize it by accepting a string
+	add fnStringManipulator to it and make sure that it doesn't require any params for exec
+	exp:
+		mypc = myParentClass(x = 'age = 10 to 30')
+		mypc.fnStringManipulator()
+Write a class "myChildClass" by inheriting "myParentClass" and
+	initialize it by accepting multiple numerical vals
+	add fnAdd to it such that it doesn't need any params
+	exp:
+		mycc = myChildClass(2,40,6,'age = 10 to 30')
+		mycc.fnAdd() (exp:48)
+		mycc.fnStringManipulator() (exp:'age in 10 to 30')
+	add First decorator to fnAdd and rerun
