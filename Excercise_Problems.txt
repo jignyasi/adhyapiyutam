@@ -56,6 +56,8 @@ There a list1 = ['a','a','a','b','b','b','b','c','c'] & list2 = ['c','d']
 	obtain union of list
 	obtain list1 - list2 unique vals (exp: ['a','b'])
 	obtain list1 - list2 all vals (exp: ['a','a','a','b','b','b','b'])
+
+##FUNCTIONS
 Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use for)
 Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use while)
 Write a function for fibonacci series "fnFib(x)" where x is number of values to be returned(use recursion)
@@ -75,6 +77,8 @@ Add one more Decorator to fnStringManipulator and fnAdd to achieve the following
 	if fnStringManipulator is called: output should be "fnStringManipulator returned{0}".format(output)
 	if fnAdd is called: output should be "fnAdd returned{0}".format(output)
 	DONT HARDCODE these texts into the decorator as I might want you to add this decorator to a new func "fnSub" and it should automatically print "fnSub returned..."
+
+##CLASSES
 Write a class "myParentClass" and 
 	initialize it by accepting a string
 	add fnStringManipulator to it and make sure that it doesn't require any params for exec
