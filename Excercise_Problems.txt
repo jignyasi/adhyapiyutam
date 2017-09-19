@@ -93,3 +93,15 @@ Write a class "myChildClass" by inheriting "myParentClass" and
 		mycc.fnAdd() (exp:48)
 		mycc.fnStringManipulator() (exp:'age in 10 to 30')
 	add First decorator to fnAdd and rerun
+Write a class "myParentClass2" and 
+	initialize it by accepting multiple numerical vals
+	add fnMultiplier to it and make sure that it doesn't require any params for exec
+	exp:
+		mypc2 = myParentClass2(2,40,6)
+		mypc2.fnMultiplier() (exp: 480)
+Write a class "myChildClass2" by inheriting "myChildClass" and "myParentClass2"
+	exp:
+		mycc = myChildClass2(2,30,6,'age = 10 to 30')
+		mycc.fnAdd() (exp:38)
+		mycc.fnStringManipulator() (exp:'age in 10 to 30')
+		mycc.fnMultiplier() (exp: 360)
