@@ -75,3 +75,36 @@ Day - 02:
     Input and Output
     Exceptions
     Standard Library
+
+Pandas
+    Object Creation
+        DataFrame
+        Series
+        dtypes
+    Input/Output
+        Read & Write
+    Viewing Data
+        head
+        columns
+        index
+    Getting
+        by Label
+        by Position
+        by index
+        by seq
+    Data Wrangling
+        describe
+        Transpose
+        sort
+            by index
+            by value
+        Setting
+            merge
+                col addition
+                row addition
+                column bind
+                row bind
+    Missing Data
+        isnull
+        drop
+        fill
