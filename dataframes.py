@@ -82,6 +82,60 @@ print df3.index
 print df3.columns.tolist()
 print df3.index.tolist()
 
-#Getting
-print df3.loc[[1,4,9],['A','B']]
-print df3.iloc[[1,4,9],[0,1]]
+#COLUMNS
+print df.Age.head()
+print df['Age'].head()
+print df[['Age','Experience']].head()
+
+#ROWS
+print df[3:5]
+print df.index.tolist()
+#df.loc[rows,cols]
+#df.iloc[rows,cols] #row and cols should be numbers
+print df.iloc[[1,3,5],[1,3]].head()
+print df.loc[[1,3,5],['Family','CCAvg']].head()
+
+temp = df.head().copy()
+print temp
+temp.index = list('abcde')
+print temp.loc[['b','d','e'],['Family','CCAvg']].head()
+
+#Setting Vals
+print df['Age'].head()
+df['TEMP'] = np.random.randint(3,30,5000)
+print df.head()
+df['Age'] += 5
+df.loc[3,'Age'] = 60
+df.loc[3,:] = 60
+
+#DataWrangling
+temp1 = temp.T #Transpose
+print temp1, temp1.shape
+print temp.describe()
+temp['MYCOL'] = np.random.choice(list('ab'),5)
+temp= temp.sort_index(ascending =False)
+print temp.sort_values(['Age','Experience'], ascending =[True,False])
+print temp.sort_values('MYCOL')
+
+t1 = temp.iloc[:,[2,3]]
+t2 = temp.iloc[:,[5,8]]
+t1['ID1'] = np.arange(5)
+t2['ID2'] = np.arange(5)
+t2 = t2.sort_values('ID2', ascending = False)
+print pd.merge(t1,t2,on ='ID')
+t3 = t1.merge(t2, left_on = 'ID1', right_on = 'ID2')
+print t3.drop(['ID1','ID2'],axis = 1)
+print t3.drop([1,3],axis = 0)
+t3['NEWCOL'] = ['hyd','pune','hyd','bang','pune']
+t4 = t3.iloc[3]
+t3 = t3.append(t4)
+t3.loc[3,'Income']
+t3 = t3.reset_index(drop = True)
+
+t1 = temp.iloc[:,[2,3]]
+t2 = temp.iloc[:,[5,8]]
+print pd.concat([t1,t2],axis = 1)
+t1.index = np.arange(5)
+t2.index = np.arange(6,11)
+print pd.concat([t1,t2],axis = 1)
+print pd.concat([t1.reset_index(drop=True),t2.reset_index(drop=True)],axis = 1)

@@ -19,4 +19,4 @@ Day - 01:
     Install Python 2.7.X
         Set Path Variable
         Install pip
-
+        Install pandas, numpy, jupyter

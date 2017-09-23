@@ -80,6 +80,8 @@ Pandas
     Object Creation
         DataFrame
         Series
+    Meta Info
+        shape       
         dtypes
     Input/Output
         Read & Write
@@ -108,3 +110,21 @@ Pandas
         isnull
         drop
         fill
+    Operations
+        stats
+            mean
+            quantile
+        apply
+        value_counts
+        size
+        crosstab
+        String Methods
+        Grouping
+            Splitting
+            Applying
+            Combining
+                Aggregation
+                Transformation
+                Filtration
+        pivot_table
+        dummies
