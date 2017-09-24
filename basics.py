@@ -335,4 +335,13 @@ a.pop('c')
 print a,b
 
 
-
+import re
+rex = re.compile('\(.*?\)')
+A = 'acf () (hihhh) (ashd|} dashfj'
+print re.sub(rex, '', A)
+rex = re.compile('\(.*?\)|\[.*?\]')
+A = 'acf () (hihhh) (ashd|} dashfj p[ascsf]'
+print re.sub(rex, '', A)
+rex = re.compile('\(.*?\)|\[.*?\]')
+rex = re.compile('\(\w+?\)')
+print re.sub(rex, '', A)

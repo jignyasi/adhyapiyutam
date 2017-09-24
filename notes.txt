@@ -66,6 +66,9 @@ Day - 02:
         dict
         set
         references
+    REGEX
+        replace is easy
+        finding a pattern is difficult
     Object Oriented Programming
         decorators
         classes

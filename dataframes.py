@@ -139,3 +139,37 @@ t1.index = np.arange(5)
 t2.index = np.arange(6,11)
 print pd.concat([t1,t2],axis = 1)
 print pd.concat([t1.reset_index(drop=True),t2.reset_index(drop=True)],axis = 1)
+
+
+#AVG VAL FOR EACH COL
+print df2.mean()
+print df2.median()
+print df2.max()
+print df2.quantile([.2,.7])
+print df2.cumsum()
+#AVG VAL FOR EACH ROW
+print df2.mean(axis = 1)
+print df2.median(axis = 1)
+print df2.max(axis = 1)
+print df2[['Age','Family']].mean(axis = 1)
+print df2.quantile([.2,.7],axis = 1)
+print df2.cumsum(axis = 1)
+
+#Multiply each col with 2
+print df2*2/4
+#if Age>15 add exp else sub exp from rowsum
+df2[['Age','Family']].sum(axis=1) + df2['Experience']*np.where(df2['Age']<15, -1, 1)
+
+def f1(x):
+    y = -x['Experience'] if x['Age'] < 15 else x['Experience']
+    return x['Age'] +x['Family'] + y
+print df2.apply(f1,axis = 1)
+
+def f2(x):
+    return None
+
+print df2.applymap(f2)
+i,_ = df2.shape
+for k in range(i):
+    x,y, z = df2.loc[k,:]
+    print x+y+z
