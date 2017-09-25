@@ -173,3 +173,35 @@ i,_ = df2.shape
 for k in range(i):
     x,y, z = df2.loc[k,:]
     print x+y+z
+
+df = pd.DataFrame({'loc':np.random.choice(['hyd','pune'],100),
+    'age': np.random.choice(np.arange(10,20),100)})
+
+def f(x): 
+    return x + myDict[x.name]
+
+def f2(x): 
+    return x['age'].between(*myDict[x['loc'].unique()[0]])
+# (10-15]:high_school
+# (15-17]:plus1&2
+# (17-20]:undergrads
+print df['age'].head(10)
+df['age_binned'] = pd.cut(df['age'], bins = [10,15,17,20], \
+    labels = ['high_school','plus1&2','undergrads'])
+print df['loc'].value_counts()
+print df.groupby('loc').size()
+print df['age_binned'].value_counts()
+print pd.crosstab(df['loc'], df['age_binned'])
+print df.groupby(['loc','age_binned']).size().unstack() #data shrink
+print df.groupby('loc')['age'].aggregate(f) #data shrink
+print df.groupby('loc')['age'].mean() #data shrink
+#if hyd add 10 if pune add 20
+myDict = {'hyd':10, 'pune':20}
+df['corrected_age'] = df.groupby('loc')['age'].transform(f) #data size will remain as is, but you might add
+#filter all guys between 12 to 14 in each loc
+print df[df['age'].between(12,14)].head()
+myDict = {'hyd':(12,14), 'pune':(16,18)}
+
+print df.groupby('loc').filter(f2) #you will filter it 
+print df.groupby('loc').filter(lambda x: x['age'].between(*myDict[x['loc'].unique()[0]])).head()
+print df.groupby('loc').filter(lambda x: len(x['age']) >10).head()
