@@ -105,3 +105,53 @@ Write a class "myChildClass2" by inheriting "myChildClass" and "myParentClass2"
 		mycc.fnAdd() (exp:38)
 		mycc.fnStringManipulator() (exp:'age in 10 to 30')
 		mycc.fnMultiplier() (exp: 360)
+
+##NUMPY
+Create a numpy list X of 10 random numbers between 10 to 100
+Create a numpy list Y of 10 random numbers between 10 to 100 with out replacement
+Create Z which is sum of X, Y such that the resultant length of Z is also 10
+Create K which is product of X, Y such that the resultant length of K is also 10
+Create M by appending X to Y such that the resultant length of M is also 20
+Create N by reshaping M into 2 dimensional array of shape (4, 5)
+Create O by doing cross product of X, Y
+Create P by doing dot product of X, Y
+
+##PANDAS
+Create a dataframe A with 10 rows and 3 cols by generating random numbers using numpy
+Create a dataframe B by reading UniversalBank.csv
+Create a dataframe C from first 10 rows of B
+Print the dimensions of A, B & C
+In C, make column "class" as categorical
+Check the data types for B
+Check the data types for C
+Observe the difference in "class" data_type between B & C
+Save to C to disk as a csv
+Print first 3 rows of C
+Print Columns names of C
+Print Index values of C
+Print head of only "class" column of C
+Print tail of only "class" column of C
+Print C's 4th row
+Print C's 2nd col
+Print C's 4th row - 3rd col value using iloc
+Print C's 4th row - 3rd col value using loc
+Print C's 4th row - 2nd, 4th & 5th col values using iloc
+Print C's 4th row - 2nd, 4th & 5th col values using loc
+Print C's 1st, 3rd & 4th row - 2nd, 4th & 5th col values using iloc
+Print C's 1st, 3rd & 4th row - 2nd, 4th & 5th col values using loc
+Understand the difference between iloc and loc
+Create a Dataframe D by copying C's 1st, 3rd & 4th rows (ur creating a subset of C)
+Add 10 to D's Age Column
+Print head of D to verify whether age was incremented by 10
+Print head of C and check whether the age col remained as is or not
+Did C's Age column's values also got updated? could you explain the rationale?
+Create a DataFrame E by copying C's 1st, 3rd & 4th rows in such a way that when we increment E's Age col...C's Age should remain unaffected
+Set E's 4th row - 3rd col value to 99 using iloc
+Set E's 4th row - 3rd col value to 199 using loc
+Set E's 4th row to zero
+Delete 2nd & 4th columns in E
+Delete 2nd & 4th rows in E
+Set E's 2nd col to -99
+Print the data summary of C
+Did it mention about "class" column
+Create a Dataframe F by Transposing C
