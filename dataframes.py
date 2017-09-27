@@ -188,6 +188,8 @@ def f2(x):
 print df['age'].head(10)
 df['age_binned'] = pd.cut(df['age'], bins = [10,15,17,20], \
     labels = ['high_school','plus1&2','undergrads'])
+df['gender'] = np.random.choice(list('mf'),100)
+'''
 print df['loc'].value_counts()
 print df.groupby('loc').size()
 print df['age_binned'].value_counts()
@@ -205,3 +207,93 @@ myDict = {'hyd':(12,14), 'pune':(16,18)}
 print df.groupby('loc').filter(f2) #you will filter it 
 print df.groupby('loc').filter(lambda x: x['age'].between(*myDict[x['loc'].unique()[0]])).head()
 print df.groupby('loc').filter(lambda x: len(x['age']) >10).head()
+'''
+
+print df['loc'].value_counts()
+print pd.crosstab(df['loc'],df['age_binned'])
+print pd.crosstab(df['loc'],df['gender'])
+print pd.crosstab(df['loc'],df['gender'])
+df['gender'] = df['gender'].str.replace('m','male')
+df['gender'] = df['gender'].str.replace('f','female')
+df['gender'] = np.random.choice(list('mf'),100)
+df['gender'] = df['gender'].replace({'m':'male','f':'female'}).head()
+df.columns = ['A','B','C','D']
+colNames = dict(zip(['A','B','C','D'], ['age','loc','age_binned','gender']))
+df = df.rename(columns = colNames)
+
+df = pd.read_csv(WD+'UniversalBank.csv').head()
+print df.transform(lambda x: x.cumsum()) #restricts output to be a series
+print df.apply(lambda x: x.cumsum()) #no such restriction
+print df.aggregate(np.cumsum) #no such restriction
+print df.agg(np.cumsum) #no such restriction
+print df.transform(lambda x: x.sum()) #restricts output to be a series
+
+df = pd.DataFrame({'loc':np.random.choice(['hyd','pune'],100),
+    'age': np.random.choice(np.arange(10,20),100)})
+df['age_binned'] = pd.cut(df['age'], bins = [10,15,17,20], \
+    labels = ['high_school','plus1&2','undergrads'])
+df['gender'] = np.random.choice(list('mf'),100)
+catg_cols = ['loc','age_binned','gender']
+print df[catg_cols].apply(lambda x: x.value_counts().to_dict())
+print df[catg_cols].agg(lambda x: x.value_counts().to_dict())
+
+#why do we group
+# 1. check how data differs between groups
+#     groupby, pivot_table
+# 2. apply some logic for each group
+#     only groupby
+#for checking how data differs between groups
+
+# df.to_csv(WD+'data_forgrouping.csv',index = False)
+print df.pivot_table(values='age',index = 'loc',columns = 'gender')
+print df.pivot_table(values='age',index = 'loc',columns = 'gender',aggfunc = lambda x: len(x))
+print df[(df['loc']=='hyd') & (df['gender'] =='f')].shape
+print df.pivot_table(values='age',index = ['age_binned','loc'],columns = 'gender')
+print df.pivot_table(values='age',index = ['age_binned','loc'],columns = 'gender').stack().reset_index()
+print df.pivot_table(values='age',index = 'loc')
+
+grpd = df.groupby('loc')
+print grpd.groups
+print grpd['gender'].value_counts()
+print df.groupby('loc')['gender'].value_counts()
+print df.groupby('loc')['gender'].apply(lambda x: x.value_counts())
+print df.groupby('loc')['age'].agg(lambda x: x.quantile([.4,.6])) #will throw error
+print df.groupby('loc')['age'].apply(lambda x: x.quantile([.4,.6]))
+print df.groupby(['loc','age_binned'])['age'].apply(lambda x: x.quantile([.4,.6]))
+# in groupby
+#     if you return single number use agg
+#     if you return a series or single number or anything else use apply
+#     if you return only a series use transform
+#     if you return only a part of series use filter
+
+# if grp: 'pune','high_school' add 10
+# if grp: 'pune','undergrads' add 20
+print df.pivot_table(values='age',index = 'loc',columns = 'age_binned')
+def f(x):
+    if x.name == ('pune','high_school'):
+        return x+10
+    elif x.name == ('pune','undergrads'):
+        return x+20
+    else:
+        return x
+
+df['age'] = df.groupby(['loc','age_binned'])['age'].apply(f)
+print df.pivot_table(values='age',index = 'loc',columns = 'age_binned')
+print df.head(20)
+
+def f(x):
+    if x.name == ('pune','high_school'):
+        return False
+    elif x.name == ('pune','undergrads'):
+        return False
+    else:
+        return True
+print df.groupby(['loc','age_binned']).filter(f).head(20)
+
+print df.pivot_table(values='age',index = 'loc')
+print df.pivot_table(values='age',index = 'loc',columns = 'age_binned')
+
+
+
+
+

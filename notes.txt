@@ -109,19 +109,17 @@ Pandas
                 row addition
                 column bind
                 row bind
-    Missing Data
-        isnull
-        drop
-        fill
     Operations
         stats
             mean
             quantile
-        apply
         value_counts
-        size
         crosstab
         String Methods
+        DF_METHODS:
+            apply
+            Aggregation
+            Transformation
         Grouping
             Splitting
             Applying
@@ -131,3 +129,7 @@ Pandas
                 Filtration
         pivot_table
         dummies
+    Missing Data
+        isnull
+        drop
+        fill
