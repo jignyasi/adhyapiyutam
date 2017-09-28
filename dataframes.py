@@ -61,7 +61,8 @@ df3 = pd.DataFrame({'A':range(10),'B':list('abcdefghij')})
 print df3
 df4 = pd.DataFrame({'A':[88],'B':['xyz']}) #val shld always be in list
 print df4
-
+mylist = [[10, 20, 40], [1, 2, 1], [1, 3, 2]]
+print pd.DataFrame(mylist,columns = ['A','B','C']).head()
 # Meta Info
 #     shape       
 #     dtypes
@@ -294,6 +295,33 @@ print df.pivot_table(values='age',index = 'loc')
 print df.pivot_table(values='age',index = 'loc',columns = 'age_binned')
 
 
+df['bmi_index'] = np.random.randn(df.shape[0]).round(1)
+df.rename(columns = {"age": 'x', 'bmi_index':'y'}, inplace = True)
+# sqrt((x2-x1)^2+(y2-y1)^2) #euclidian distance in 2d space
+print df.loc[0:1,['x','y']]
+print pd.get_dummies(df['loc']).head()
+print pd.get_dummies(df['age_binned']).head()
+df1 = pd.get_dummies(df)
+# sqrt((x2-x1)^2+(y2-y1)^2+(z2-z1)^2) #euclidian distance in 3d space
+print df1.head()
+# distance between x,y,hyd to x,y,pune == x,y,pune to x,y,bang...
+df.rename(columns = {'x':"age", 'y':'bmi_index'}, inplace = True)
+df.to_csv(WD+'sample_df.csv',index = False)
 
-
-
+df2 = pd.read_csv(WD+'sample_df.csv', na_values = ['NA','','NULL',None])
+# missing val summary
+print df2.isnull().head()
+print df2.isnull().sum()
+print pd.get_dummies(df2['age_binned']).head(10)
+# handling missing vals
+    # by dropping
+print df2.shape
+print df2.dropna(how = 'any').shape
+print df2.dropna(how = 'any').head(10)
+    # by filling
+print df2.fillna(9999).head(10)
+myDtypes = df2.dtypes.reset_index()
+catgCols = myDtypes['index'][myDtypes[0]=='object']
+numCols = myDtypes['index'][~myDtypes['index'].isin(catgCols)]
+#missing vals are replaced by means for numerics and modes for catg
+df2 = df2.apply(lambda x:  x.fillna(x.mean()) if x.name in numCols else x.fillna(x.mode()[0])).head(25)
