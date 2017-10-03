@@ -133,3 +133,103 @@ Pandas
         isnull
         drop
         fill
+    Plotting
+        1D
+            Numerical
+                line plot
+                box plot
+                density
+                histogram
+            Categorical
+                bar plot
+                hist
+                pie
+        2D
+            Num and Num
+                points/dotplot
+                jitter
+            Num and Catg
+                boxplot
+            Catg and Catg
+                faceting
+        Add multiple layers through
+            Filling color
+            Size
+            Shape
+
+        1D
+            Lines (and markers)
+                plot(x,y)
+                axvline
+                axhline
+            Scatter
+                scatter(x,y)
+                scatter(x,y,s)
+                scatter(x,y,s,c)
+            Bar
+                bar(x, y, yerr=e)
+                barh(x, y)
+                bar(l, h, w, b)
+            Fill/Fill_between/Stackplot
+        Data Distributions
+            hist
+            boxplot
+            violinplot
+        2D Arrays and Images
+            imshow
+            pcolor/pcolormesh
+            contour/contourf/clabel
+        Vector Fields
+            arrow(x, y, dx, dy)
+            quiver(x, y, dx, dy)
+            streamplot(x, y, dx, dy)
+Machine Learning
+    Statistics
+    Supervised learning
+        classification --> predict Categorical value
+        regression --> predict Numerical value
+    Un-Supervised learning --> un-labelled
+        recognize images
+        recognize speech
+    Timeseries --> predicting stock data
+    Reinforced learning
+    Pipelining Solution
+        Preprocessing
+            Mandatory steps
+                cleaning
+                    removing special characters
+                    handling case sensitivity
+                    re-grouping similar levels into one
+                    all numeric col having one or a few categorical vals in it
+                    all categorical col having one or a few numerical vals in it
+                    coercing psuedo numerals into categorical
+                imputation
+                    Central imputation
+                dummies
+                Train-Test split
+            Additional steps
+                Label encoding
+                Dimensionality reduction
+                    correlation
+                    important attributes
+                    svd/pca
+                    missining val %
+                Highly cardinal attributes
+        Modelling
+            Training an algorithm
+            Selecting different algos
+        Cross-validation
+            Evaluate the performance
+                Classification
+                    Precision
+                    Recall
+                    Accuracy
+                    F1-Statistic
+                Regression
+                    RMSE
+                    MAPE
+                    MaxAPE
+                    SMAPE
+
+
+
