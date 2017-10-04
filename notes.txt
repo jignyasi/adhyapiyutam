@@ -203,6 +203,7 @@ Machine Learning
                     all numeric col having one or a few categorical vals in it
                     all categorical col having one or a few numerical vals in it
                     coercing psuedo numerals into categorical
+                    standardizing
                 imputation
                     Central imputation
                 dummies
@@ -219,6 +220,7 @@ Machine Learning
             Training an algorithm
             Selecting different algos
         Cross-validation
+            KFold CV
             Evaluate the performance
                 Classification
                     Precision
