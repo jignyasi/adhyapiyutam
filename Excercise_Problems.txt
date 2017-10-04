@@ -155,3 +155,51 @@ Set E's 2nd col to -99
 Print the data summary of C
 Did it mention about "class" column
 Create a Dataframe F by Transposing C
+Create a Dataframe X through the following code:
+rs = np.random.RandomState(123)
+X = pd.DataFrame({'city':rs.choice(['chennai','hyd','bang','delhi'],30),\
+            'age':rs.choice(range(10,40),30),\
+            'gender':rs.choice(['male','female'],30),\
+            'xID': rs.choice(range(10,100),30)})
+Create DataFrame X1 by ascending sort of gender in X
+Create DataFrame X2 by descending sort of city in X
+Create DataFrame X3 by ascending sort of gender and descending sort of city in X
+Create DataFrame Y through the following code:
+rs = np.random.RandomState(234)
+Y = pd.DataFrame({'yID': rs.choice(range(10,100),30),\
+			'score': rs.randn(30)})
+Create DataFrame Z1 by merging X and Y (outer join..use id's as xID & yID)
+Create DataFrame Z2 by merging X and Y (inner join)
+Create DataFrame Z3 by merging X and Y (left join)
+Create DataFrame Z4 by merging X and Y (right join)
+Create DataFrame X4 from X but rename all column names by appending 1 (like city will become city1)
+Create DataFrame Z5 by column binding X and X4 (no merging of id's required)
+Create DataFrame Z6 by column binding X and Y (no merging of id's required)
+Create DataFrame Z7 by row binding X and X4
+Create a list Z8 = ['hyd',22,'male',99]
+Create DataFrame Z9 by adding Z8 as an additional row to X4
+Find mean of age column in X4 dataframe
+Find the median of age column in X4 dataframe
+Find the 20%ile, 40%ile, 60%ile of age column in X4 dataframe
+Find the number of occurances of each city in the X4 dataframe
+Find the gender distribution in each city for the X4 dataframe
+Create a Dataframe X5 from X4 where gender column will only have 'm' and 'f' instead of 'male' and 'female' (use replace)
+Create a Dataframe X6 from X4 where gender column will only have 'm' and 'f' instead of 'male' and 'female' (don't use replace)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
