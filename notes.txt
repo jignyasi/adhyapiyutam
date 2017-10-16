@@ -119,7 +119,7 @@ Pandas
         DF_METHODS:
             apply
             Aggregation
-            Transformation
+            
         Grouping
             Splitting
             Applying

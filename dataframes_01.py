@@ -74,22 +74,33 @@ print df8.apply(lambda x: x*100/x.sum(), axis = 1)
 print df8.transform(lambda x: x*2)
 print df8.aggregate(lambda x: (x[0],x[1]))
 
+df = pd.DataFrame({'loc':np.random.choice(['hyd','pune'],100),
+    'age': np.random.choice(np.arange(10,20),100)})
+df['age_binned'] = pd.cut(df['age'], bins = [-float('inf'),15,17,float('inf')], \
+    labels = ['high_school','plus1&2','undergrads'])
+df['gender'] = np.random.choice(list('mf'),100)
 
+# transform & aggregate will work num arrays
+print df.apply(lambda x: len(x))
+print df.transform(lambda x: len(x))
+print df.aggregate(lambda x: len(x))
 
+df1 = pd.DataFrame({'num1': np.random.randint(10,100,50),\
+    'num2': np.random.randn(50)})
 
+df.to_csv(WD + 'grouping_df.csv', index = False)
 
+print pd.crosstab(df['loc'],df['gender'])
+print df.pivot_table(values = 'age', index = 'loc', columns = 'gender')
+print df.pivot_table(values = 'age', index = ['loc','gender'], columns = 'age_binned')
+print df[(df['loc']=='hyd')& (df['gender'] == 'm')]
 
-
-
-
-
-
-
-
-
-
-
-
+print df.apply(lambda x: x.shape)
+print df.groupby('loc').apply(lambda x: x['gender'].value_counts())
+print df.groupby(['loc']).apply(lambda x: x['gender'].value_counts())
+df['age_binned'] = df['age_binned'].astype('str')
+# df2 = df.groupby(['loc','gender']).apply(lambda x: x['age_binned'].replace({'undergrads':x.name[0]+'_'+x.name[1]+'_'+'undergrads'}))
+# df2['grpd_binned'] = df.groupby(['loc','gender'])['age_binned'].apply(lambda x: x.replace({'undergrads':x.name[0]+'_'+x.name[1]+'_'+'undergrads'}))
 
 
 
